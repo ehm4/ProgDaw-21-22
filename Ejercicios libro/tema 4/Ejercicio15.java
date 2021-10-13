@@ -5,7 +5,7 @@
             System.out.println("Este programa realizará una pirámide rellena por el caracter que usted introduzca y de la forma que usted quiera");
             System.out.println("Introduce un caracter= ");
             char c=s.next().charAt(0);
-            System.out.println("Decide de qué forma quiere la pirámide= 1(punta hacia arriba), 2(punta hacia abajo, 3(punta hacia la izquierda), 4(punta hacia la derecha)");
+            System.out.println("Decide de qué forma quiere la pirámide= 1(punta hacia arriba), 2(punta hacia abajo), 3(punta hacia la izquierda), 4(punta hacia la derecha)");
             int n=s.nextInt();
             switch (n){
                 case 1: 
