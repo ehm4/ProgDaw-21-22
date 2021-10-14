@@ -9,16 +9,17 @@ import java.util.Scanner;
     double media= (n1+n2)/2;
     if((media>=5)&&(media<=10)){
     System.out.printf("Usted está aprobado y su media es= %.2d ", "media");
-    }
-    else if((media<5)&&(media>=0)){
+    
+        if((media<5)&&(media>=0)){
         System.out.println("¿Examen de recuperación aprobado? (apto/no apto)");
         String a=s.next();
         if(a.equals("apto")){
             System.out.println("Usted está aprobado con un 5");
         }
-        else{
+        else if (a.equals("no apto")){
             System.out.println("Usted está suspenso");
         }
+    }
     }
     else{
         System.out.println("Datos introducidos no válidos");
