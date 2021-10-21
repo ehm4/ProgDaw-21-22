@@ -18,11 +18,6 @@ public class Ejercicio20{
 
         espacios=h-1;
         espacios2=-1;
-        //for(int j=(h-1); j>0; j--){
-        //    System.out.print(".");
-        //}
-        //System.out.println(c);
-        //System.out.println();
             for(int i=0;i<(h-1); i++){
             
             for(int j=espacios; j>0; j--){
