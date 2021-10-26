@@ -3,32 +3,32 @@ public class Ejercicio21{
     public static void main(String[]args){
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Introduce números positivos, si quiere para introduzca uno negativo.");
+        System.out.println("Introduce números positivos, si quiere parar introduzca uno negativo.");
         int n=0;
-        int pares=0;
         int impares=0;
-        int contadorpares=0;
         int contadorimpares=0;
         double resto;
-        int paresfinal=0;
-        double imparesfinal=0;
+        int parfinal=0;
+        int imparesfinal=0;
+        double imparesmedia=0;
         do{
         n=s.nextInt();
         if(n>=0){
         resto=n%2;
         if(resto==0){
-            pares=n;
-            contadorpares++;
-            paresfinal+=pares;
+            if(n>parfinal){
+                parfinal=n;
+            }
         }
         else{
             impares=n;
             contadorimpares++;
-            imparesfinal+=impares;
         }
+        imparesfinal+=impares;
         }
         }while(n>=0);
-        System.out.println("La media de los números pares es: "+(paresfinal/contadorpares));
-        System.out.printf("La media de los números impares es: %.2f\n",(imparesfinal/contadorimpares));
+        imparesmedia=imparesfinal/contadorimpares;
+        System.out.println("El máximo de los números pares es: "+parfinal);
+        System.out.printf("La media de los números impares es: %.2f",imparesmedia);
     }
 }

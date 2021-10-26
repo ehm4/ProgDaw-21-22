@@ -6,17 +6,16 @@ public class Ejercicio15{
         double b= s.nextDouble();
         System.out.println("Introduce un exponente: ");
         int e= s.nextInt();
-        double total;
-        int e1;
-        for(int i=1; i<=e; i++ ){
-            total=1;
-            e1=1;
-        
+        double total=1;
+        int e1=1;
+        for(int i=1; i==e; i++ ){ 
             for(int j=0; j<e1; j++){
             total*=b;
+            e=1;
+            b++;
             }
-        
-        System.out.println(b+" ^ "+e+" : "+total);
+            System.out.println(b+" ^ "+e+" : "+total);
+            s.close();
         }
     }
 }
