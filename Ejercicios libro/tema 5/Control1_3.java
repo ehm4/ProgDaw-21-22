@@ -11,13 +11,17 @@ public class Control1_3{
         int cifras=s.nextInt();
         int digitos=0;
         int aux=n;
+        double coeficiente;
+        int c;
         do{
-        for(int i=0; i<n;i++){
+        while(n>0){
             n/=10;
             digitos++;
         }
-        for(int i=0;i<aux;i++){
-            
+        for(int i;i<;i++)
+        for(int i=0;i<(digitos-cifras);i++){
+        coeficiente=Math.pow(10, (digitos-cifras));
+        c=(aux/(int)coeficiente)%10;
         }
         System.out.println("Introduzca el tipo de desplazamiento (izquierda, derecha; salir): ");
         desplazamiento=System.console().readLine();

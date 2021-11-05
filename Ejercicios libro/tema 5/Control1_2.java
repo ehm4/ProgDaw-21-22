@@ -26,7 +26,7 @@ public class Control1_2{
                 System.out.println("Incorrecto. Introduzca la orientación (izquierda, derecha, arriba, abajo): ");
         orientacion= System.console().readLine();
             }
-            while((orientacion!="izquierda")&&(orientacion!="derecha")&&(orientacion!="arriba")&&(orientacion!="abajo"));
+            while(!orientacion.equals("izquierda")&&!orientacion.equals("derecha")&&!orientacion.equals("arriba")&&!orientacion.equals("abajo"));
         }
 
         System.out.println("Introduzca el primer caracter: ");
