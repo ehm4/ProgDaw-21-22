@@ -9,7 +9,6 @@ public class Ejercicio17{
         s.close();
         int nh=(int)(Math.random()*(h-4)+2);
         int nb=(int)(Math.random()*(b-4)+1);
-        System.out.println(nh+" "+nb);
         for(int i=0;i<h;i++){
           System.out.print("*");
           for(int j=0;j<b-2;j++){
