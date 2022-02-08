@@ -3,46 +3,52 @@ package paquetes;
 public class tirada {
   private dado[] dado;
   private int numcaras;
-  private int dados;
-  private int privilegiado;
-  public tirada(int n, int n2, int privilegiado){
+  private int numtiradas;
+  private int trucado;
+  public tirada(int n, int n2, int trucado){
     dado=new dado[n];
     this.numcaras=n2;
-    this.dados=n;
-    if(privilegiado>=1&&privilegiado<=n2){
-      this.privilegiado=privilegiado;
+    this.numtiradas=n;
+    if(trucado<1||trucado>n){
+    // Si el numero trucado no está en el rango, se eligirá uno al azar
+      this.trucado=(int)(Math.random()*(this.numcaras)+1);
     }
     else{
-      // Como no está cerrado se elige uno aleatorio
-      this.privilegiado=(int)(Math.random()*(this.numcaras+1)+1);
+      this.trucado=trucado;  
     }
+   
   }
   @Override
   public String toString() {
     String string="";
-    boolean repeticion=true;
+    int repeticiones;
     do{
-      int repeticiones=0;
-      for(int i=0;i<this.dados;i++){
-        int opcion=(int)(Math.random()*2);
+      repeticiones=0;
+      for(int i=0;i<this.numtiradas;i++){
+        int opcion;
+        opcion=(int)(Math.random()*2);
         if(opcion==0){
-          this.dado[i]=new dado((int)(Math.random()*(this.numcaras+1)+1));
-        string+=this.dado[i]+" ";
+        this.dado[i]=new dado(this.trucado);
+        string=string+this.dado[i]+" ";  
         }
-        else if(opcion==1){
-          this.dado[i]=new dado(this.privilegiado);
+        else{
+        this.dado[i]=new dado((int)(Math.random()*(this.numcaras)+1));
+        // Aqui controlo que el otro numero que salga del 50% que no es trucado no salga con el valor del trucado ya que si no no sería 50% y 50% de posibilidades
+          if(this.dado[i].obtenerValor()==this.trucado){
+            do{
+              this.dado[i]=new dado((int)(Math.random()*(this.numcaras)+1));
+            }while(this.dado[i].obtenerValor()==this.trucado);
+          }
+           string=string+this.dado[i]+" ";  
         }
       }
-      string+="\n";
-      for(int i=this.dados;i>this.dados;i--){
-        if(this.dado[i].obtenerValor()==this.dado[i-1].obtenerValor()){
+      string=string+"\n";
+      for(int i=0;i<this.numtiradas-1;i++){
+        if(this.dado[i].obtenerValor()==this.dado[i+1].obtenerValor()){
           repeticiones++;
         }
       }
-      if(repeticiones==this.dados-1){
-        repeticion=false;
-      }
-    }while(repeticion);
+    }while(repeticiones!=this.numtiradas-1);
     return string;
   }
 }

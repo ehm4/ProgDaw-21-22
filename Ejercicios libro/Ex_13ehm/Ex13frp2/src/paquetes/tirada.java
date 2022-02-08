@@ -4,29 +4,29 @@ package paquetes;
 public class tirada {
   private dado[] dado;
   private int numcaras;
-  private int dados;
+  private int numtiradas;
   public tirada(int n, int n2){
     dado=new dado[n];
     this.numcaras=n2;
-    this.dados=n;
+    this.numtiradas=n;
   }
   @Override
   public String toString() {
     String string="";
-    int repeticiones=0;
+    int repeticiones;
     do{
       repeticiones=0;
-      for(int i=0;i<this.dados;i++){
-        this.dado[i]=new dado((int)(Math.random()*(this.numcaras+1)+1));
-        string+=this.dado[i]+" ";
+      for(int i=0;i<this.numtiradas;i++){
+        this.dado[i]=new dado((int)(Math.random()*(this.numcaras)+1));
+        string=string+this.dado[i]+" ";
       }
-      string+="\n";
-      for(int i=this.dados;i>this.dados;i--){
-        if(this.dado[i]==this.dado[i-1]){
+      string=string+"\n";
+      for(int i=0;i<this.numtiradas-1;i++){
+        if(this.dado[i].obtenerValor()==this.dado[i+1].obtenerValor()){
           repeticiones++;
         }
       }
-    }while(repeticiones!=this.dados-1);
+    }while(repeticiones!=this.numtiradas-1);
     return string;
   }
 }

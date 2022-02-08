@@ -9,8 +9,6 @@ public class dado {
     return this.valor;
   }
   public String toString(){
-    String string="";
-    string+="["+this.valor+"] ";
-    return string;
+    return "["+this.valor+"] ";
   }
 }
