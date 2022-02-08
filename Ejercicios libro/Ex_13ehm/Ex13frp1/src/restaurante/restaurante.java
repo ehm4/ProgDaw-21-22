@@ -8,7 +8,7 @@ public class restaurante {
     private articulo [] articulo;
     private int numeroarticulo;
     public restaurante(String nombre, int maxcapacidad){
-        articulo=new articulo[maxcapacidad];
+        this.articulo=new articulo[maxcapacidad];
         this.nombre = nombre;
         this.numeroarticulo = 0;
     }
@@ -18,7 +18,7 @@ public class restaurante {
              return false;  
             }
             else{
-              articulo[numeroarticulo]=t;
+              articulo[numeroarticulo++]=t;
               capacidad=true;
             }
         return capacidad;
@@ -26,7 +26,7 @@ public class restaurante {
       public boolean cocinaReceta(receta r){
         for(int i=0;i<this.numeroarticulo;i++){
           boolean sepuede=false;
-          for(int j=0;j<this.numeroarticulo;j++){
+          for(int j=0;j<r.numeroIngredientes();j++){
             if((articulo[i].obtenerNombre()).equals(r.obtenerIngrediente(j).obtenerNombre()) && (articulo[i].stock() < r.obtenerIngrediente(j).obtenerCantidad())){
               return false;
             }

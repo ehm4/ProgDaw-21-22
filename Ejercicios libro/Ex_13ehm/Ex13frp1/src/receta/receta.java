@@ -18,7 +18,7 @@ public class receta {
       return capacidad;
     }
     else{
-      ingrediente[cantidadIngredientes]=t;
+      ingrediente[cantidadIngredientes++]=t;
       capacidad=true;
     }
     return capacidad;

@@ -22,6 +22,6 @@ System.out.println(miRestaurante.listadoAlmacen());
 System.out.println(miReceta);
 miRestaurante.cocinaReceta(miReceta);
 System.out.println("Después de cocinar la receta ...");
-System.out.println(miRestaurante);
+System.out.println(miRestaurante.listadoAlmacen());
     }
 }

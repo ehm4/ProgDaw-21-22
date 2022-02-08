@@ -19,6 +19,7 @@ public class ingrediente_base {
   protected void ponerCantidad(int n){
     this.cantidad = n;
   }
+  @Override
   public String toString(){
     return this.nombre+" -> Cantidad: "+this.cantidad;
   }
